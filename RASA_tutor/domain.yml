@@ -1,0 +1,31 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - response
+  - wrong response 
+
+responses:
+  utter_greet:
+  - text: "Olá , eu te farei algumas perguntas sobre o texto, ok ?"
+
+  utter_goodbye:
+  - text: "Tchau"
+  
+  utter_question:
+  - text: "Quantos personagens haviam na história?"
+  
+  utter_feedback:
+  - text: "Muito bem , ótima resposta"
+  - text: "Exelente resposta !!"
+  - text: "Exatamente!"
+  
+  utter_wrong_feedback:
+  - text : "Hm... quase , vou te ajudar a responder melhor"
+  
+  utter_hint:
+  - text : " Haviam três casa e também havia um lobo , logo , haviam quantos personagens ?"  
+  
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
