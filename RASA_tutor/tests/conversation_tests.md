@@ -1,51 +1,30 @@
 #### This file contains tests to evaluate that your bot behaves as expected.
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/user-guide/testing-your-assistant/
 
-## happy path 1
-* greet: hello there!
+## question_01  
+* greet: oi 
   - utter_greet
-* mood_great: amazing
-  - utter_happy
+  - utter_question_1
+* answer_1:[três](quantities)
+  - utter_feedback
+  - utter_next
+  - utter_question_2
+* answer_2:[pedra](materials)
+  - utter_feedback
 
-## happy path 2
-* greet: hello there!
+## question_01 wrong
+* greet:oi
   - utter_greet
-* mood_great: amazing
-  - utter_happy
-* goodbye: bye-bye!
-  - utter_goodbye
+  - utter_question_1
+* answer_1:[quatro](quantities)
+  - utter_hint_1
+* answer_1:[três](quantities)
+  - utter_feedback
+  - utter_next
+  - utter_question_2 
+* answer_2:[madeira](materials)
+  - utter_hint_2
+* answer_2:[pedra](materials)
+  - utter_feedback
 
-## sad path 1
-* greet: hello
-  - utter_greet
-* mood_unhappy: not good
-  - utter_cheer_up
-  - utter_did_that_help
-* affirm: yes
-  - utter_happy
 
-## sad path 2
-* greet: hello
-  - utter_greet
-* mood_unhappy: not good
-  - utter_cheer_up
-  - utter_did_that_help
-* deny: not really
-  - utter_goodbye
-
-## sad path 3
-* greet: hi
-  - utter_greet
-* mood_unhappy: very terrible
-  - utter_cheer_up
-  - utter_did_that_help
-* deny: no
-  - utter_goodbye
-
-## say goodbye
-* goodbye: bye-bye!
-  - utter_goodbye
-
-## bot challenge
-* bot_challenge: are you a bot?
-  - utter_iamabot
