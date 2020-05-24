@@ -1,31 +1,72 @@
-intents:
+ 
+entities: 
+  - materials_right
+  - materials_wrong
+  - quantities_right
+  - quantities_wrong
+  - wolf_action1
+  - wolf_action2
+  - subject_1
+  - subject_2
+forms: 
+  - complex_question
+intents: 
+  - answer_1
   - greet
-  - goodbye
-  - affirm
-  - response
-  - wrong response 
-
-responses:
-  utter_greet:
-  - text: "Olá , eu te farei algumas perguntas sobre o texto, ok ?"
-
-  utter_goodbye:
-  - text: "Tchau"
-  
-  utter_question:
-  - text: "Quantos personagens haviam na história?"
-  
-  utter_feedback:
-  - text: "Muito bem , ótima resposta"
-  - text: "Exelente resposta !!"
-  - text: "Exatamente!"
-  
-  utter_wrong_feedback:
-  - text : "Hm... quase , vou te ajudar a responder melhor"
-  
-  utter_hint:
-  - text : " Haviam três casa e também havia um lobo , logo , haviam quantos personagens ?"  
-  
-session_config:
-  session_expiration_time: 60
+  - answer_2
+  - answer_3
+  - out_of_scope
+responses: 
+  utter_ask_subject1: 
+    - text: "Quem o lobo comeu ?"
+  utter_ask_subject2: 
+    - text: " O que o lobo soprou?"
+  utter_ask_wolf_action1: 
+    - text: "Após comer o porquinho o lobo fez o que ?"
+  utter_ask_wolf_action2: 
+    - text: "Antes de soprar a casa quem o que o lobo fez ?"
+  utter_default: 
+    - text: "Não entendi, reformule sua resposta"
+  utter_feedback: 
+    - text: "Parabéns ,exelente resposta"
+  utter_greet: 
+    - text: "Olá"
+  utter_hint_1: 
+    - text: "Haviam três casas , logo , haviam quantos porquinhos ?"
+  utter_hint_2: 
+    - text: " Era feita de algo bem duro, que não quebra fácil ....."
+  utter_next: 
+    - text: "Vamos para a próxima pergunta"
+  utter_out_of_scope: 
+    - text: "Parece que você não entendeu muito bem a pergunta, vou fazer ela novamente para você"
+  utter_question_1: 
+    - text: "Haviam quantos porquinhos na história?"
+  utter_question_2: 
+    - text: "De que era feita a casa que não caiu? "
+  utter_question_3: 
+    - text: "Conte com suas palavras o que o lobo mal fez no ultimo parágrafo da história"
+session_config: 
   carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+slots: 
+  materials_right: 
+    type: text
+  materials_wrong: 
+    type: text
+  quantities_right: 
+    type: text
+  quantities_wrong: 
+    type: text
+  subject1: 
+    auto_fill: false
+    type: unfeaturized
+  subject2: 
+    auto_fill: false
+    type: unfeaturized
+  wolf_action1: 
+    auto_fill: false
+    type: unfeaturized
+  wolf_action2: 
+    auto_fill: false
+    type: unfeaturized
+
